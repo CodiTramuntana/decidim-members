@@ -1,0 +1,14 @@
+---
+en:
+  activemodel:
+    attributes:
+      user:
+        name: Your name & Organization
+  decidim:
+    devise:
+      omniauth_registrations:
+        new:
+          username_help: Public name and Organization that appears on your posts.
+      registrations:
+        new:
+          username_help: Public name and Organization that appears on your posts.
