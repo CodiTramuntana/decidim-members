@@ -12,3 +12,24 @@ en:
       registrations:
         new:
           username_help: Public name and Organization that appears on your posts.
+    members:
+      index:
+        title: Members
+        members:
+          one: One member
+          other: "%{count} members"
+        members_found:
+          one: One member found
+          other: "%{count} members found"
+        search: Search
+        show_all: Show all
+      show:
+        areas_of_interest: I'm interested in %{areas}.
+        country: I'm from %{country}.
+        i_speak: I speak %{languages}.
+    menu:
+      members: Members
+  pages:
+    home:
+      statistics:
+        members_count: Members
