@@ -1,0 +1,14 @@
+---
+es:
+  activemodel:
+    attributes:
+      user:
+        name: Tu nombre y Organización
+  decidim:
+    devise:
+      omniauth_registrations:
+        new:
+          username_help: Nombre público y Organización que aparece en sus publicaciones.
+      registrations:
+        new:
+          username_help: Nombre público y Organización que aparece en sus publicaciones.
