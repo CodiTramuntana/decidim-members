@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "rails"
-require "active_support/all"
 
 require "decidim/core"
 require "sanitize"
@@ -12,6 +11,7 @@ module Decidim
     # Decidim's Members Rails Engine.
     class Engine < ::Rails::Engine
       isolate_namespace Decidim::Members
+      engine_name "decidim_members"
 
       routes do
         resources(:members, only: [:index, :show], path: "members") do
@@ -23,7 +23,7 @@ module Decidim
 
       initializer "decidim.stats" do
         Decidim.stats.register :members_count, priority: StatsRegistry::HIGH_PRIORITY do |organization, _start_at, _end_at|
-          Decidim::User.where(organization: organization).count
+          Decidim::Members::User.where(organization: organization).public_spaces.count
         end
       end
 

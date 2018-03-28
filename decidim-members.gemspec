@@ -23,6 +23,6 @@ Gem::Specification.new do |s|
   s.add_dependency "sanitize", "~> 4.5"
   s.add_dependency "pg_search"
 
-  s.add_development_dependency "decidim-dev", '~> 0.10.0'
-  s.add_development_dependency "decidim-admin", '~> 0.10.0'
+  s.add_development_dependency "decidim-dev", "~> 0.10.0"
+  s.add_development_dependency "decidim-admin", "~> 0.10.0"
 end

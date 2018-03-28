@@ -47,9 +47,10 @@ module Decidim
         if query.present?
           session[:members_ordering] = nil
           users = Decidim::User.table_name
-          unsorted_org_members.
-            select("#{users}.*, ts_rank(#{users}.tsv, query, 1|32) as score").
-            order('score ASC')
+          unsorted_org_members
+          # unsorted_org_members.
+          #   select("#{users}.*, ts_rank(#{users}.tsv, query, 1|32) as score").
+          #   order('score ASC')
         else
           unsorted_org_members.reorder Hash[[session_ordering]]
         end

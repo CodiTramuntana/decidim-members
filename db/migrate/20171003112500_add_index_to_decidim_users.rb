@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class AddIndexToDecidimUsers < ActiveRecord::Migration[5.1]
   def up
     execute 'ALTER TABLE decidim_users ADD COLUMN tsv TSVECTOR'

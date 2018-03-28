@@ -8,7 +8,9 @@ module Decidim
       end
 
       def query
-        @organization.users.not_deleted.no_active_invitation.order(name: :asc)
+        # Decidim::Authorization.where(granted: true).joins(:user).where(decidim_users: { decidim_organization_id: @organization.id })
+        Decidim::Members::User.where(organization: @organization).not_deleted.no_active_invitation.order(name: :asc)
+        # @organization.users.not_deleted.no_active_invitation.order(name: :asc)
       end
     end
   end

@@ -2,7 +2,9 @@
 
 class CreateSearchConfig < ActiveRecord::Migration[5.1]
   def up
-    enable_extension 'unaccent'
+    enable_extension :unaccent
+    enable_extension :pg_trgm
+
     language = 'english'
     execute <<-SQL
       CREATE TEXT SEARCH DICTIONARY #{language}_stem ( TEMPLATE = snowball, Language = #{language}, StopWords = #{language} );
