@@ -21,14 +21,13 @@ module Decidim
 
       private
 
-
       def collection
         @collection ||= org_members.page(page).per(12)
       end
 
       def decorated_members
         collection.map{ |m|
-          ::Decidim::UserPresenter.new(m)
+          ::Decidim::UserPresenter.new(m.becomes(Decidim::User))
         }
       end
 
@@ -36,8 +35,7 @@ module Decidim
         @org_members ||= begin
           scope = OrganizationMembers.new(organization).query
           if query.present?
-            # scope = FilteredMembers.for(query, scope)
-            scope = Decidim::Members::User.search_by_full_name(query)
+            scope = FilteredMembers.for(query, scope)
           end
           scope
         end
@@ -47,10 +45,7 @@ module Decidim
         if query.present?
           session[:members_ordering] = nil
           users = Decidim::User.table_name
-          unsorted_org_members
-          # unsorted_org_members.
-          #   select("#{users}.*, ts_rank(#{users}.tsv, query, 1|32) as score").
-          #   order('score ASC')
+          unsorted_org_members.order(name: :asc)
         else
           unsorted_org_members.reorder Hash[[session_ordering]]
         end

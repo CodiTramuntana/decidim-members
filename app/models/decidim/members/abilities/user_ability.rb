@@ -20,7 +20,7 @@ module Decidim
         end
 
         def define_abilities
-          can :read, Decidim::User
+          can :read, Decidim::Members::User
         end
       end
     end

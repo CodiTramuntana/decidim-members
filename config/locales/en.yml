@@ -23,10 +23,6 @@ en:
           other: "%{count} members found"
         search: Search
         show_all: Show all
-      show:
-        areas_of_interest: I'm interested in %{areas}.
-        country: I'm from %{country}.
-        i_speak: I speak %{languages}.
     menu:
       members: Members
   pages:

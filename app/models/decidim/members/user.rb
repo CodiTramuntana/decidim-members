@@ -2,16 +2,14 @@ module Decidim
   module Members
     class User < Decidim::User
       include Decidim::Participable
-
       include PgSearch
-      pg_search_scope :search_by_full_name, :against => [:name, :nickname], :using => [:tsearch, :trigram]
+
+      pg_search_scope :search_by_name_like, :against => [:name, :nickname],
+                      :using => { :trigram => { :threshold => 0.1 } }
 
       def self.public_spaces
-        #TODO only filtered
-        all
-        # published
+        not_deleted.no_active_invitation
       end
-
     end
   end
 end

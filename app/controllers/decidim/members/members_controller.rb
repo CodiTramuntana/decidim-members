@@ -6,42 +6,18 @@ module Decidim
     class MembersController < Decidim::ApplicationController
 
       def index
-        authorize! :read, Decidim::User
-          # @members = Decidim::User.all.where(organization: current_organization)
+        if current_user.present?
+          authorize! :read, Decidim::Members::User
+
           @members = MemberCollectionPresenter.new(
             organization: current_organization,
             page: params[:page].to_i,
             query: params[:q]
           ).attach_controller self
-      #   if params[:q].present?
-      #    @members = Decidim::User.search(params[:q])
-      #  else
-      #    @members = Decidim::User.all
-      #  end
+        else
+          raise ActionController::RoutingError.new('Not Found')
+        end
       end
-
-      # def export
-      #   authorize! :export, :users
-      #   users = OrganizationMembers.new(current_organization).query
-      #   send_data(
-      #     GenerateUserCsv.(users),
-      #     type: 'text/csv; header=present',
-      #     filename: 'users.csv'
-      #   )
-      # end
-
-      def show
-        authorize! :read, Decidim::User
-        user = UserPresenter.new current_member
-        redirect_to user.profile_path, status: :moved_permanently
-      end
-
-      private
-
-      def current_member
-        @current_member ||= OrganizationMembers.new(current_organization).query.find params[:id]
-      end
-
     end
   end
 end

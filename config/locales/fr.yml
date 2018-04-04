@@ -12,3 +12,20 @@ fr:
       registrations:
         new:
           username_help: Nom public et Organisation qui apparaît sur vos publications.
+    members:
+      index:
+        title: Membres
+        members:
+          one: Un membre
+          other: "%{count} membres"
+        members_found:
+          one: Un membre trouvé
+          other: "%{count} membres trouvés"
+        search: Rechercher
+        show_all: Montre tout
+    menu:
+      members: Membres
+  pages:
+    home:
+      statistics:
+        members_count: Membres

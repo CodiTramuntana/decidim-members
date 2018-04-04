@@ -14,16 +14,13 @@ module Decidim
       engine_name "decidim_members"
 
       routes do
-        resources(:members, only: [:index, :show], path: "members") do
-          collection do
-            get :export
-          end
-        end
+        resources(:members, only: [:index], path: "members")
       end
 
       initializer "decidim.stats" do
         Decidim.stats.register :members_count, priority: StatsRegistry::HIGH_PRIORITY do |organization, _start_at, _end_at|
-          Decidim::Members::User.where(organization: organization).public_spaces.count
+          user_ids = Decidim::Verifications::Authorizations.new(organization: organization, granted: true).pluck(:decidim_user_id).uniq
+          Decidim::Members::User.where(id: user_ids).public_spaces.count
         end
       end
 
@@ -31,7 +28,6 @@ module Decidim
         Decidim.configure do |config|
           config.abilities += [
             "Decidim::Members::Abilities::UserAbility",
-            "Decidim::Members::Abilities::AdminAbility",
           ]
         end
       end
@@ -41,7 +37,8 @@ module Decidim
           menu.item I18n.t("menu.members", scope: "decidim"),
                     decidim_members.members_path,
                     position: 2.5,
-                    active: :inclusive
+                    active: :inclusive,
+                    if: current_user.present?
         end
       end
     end
