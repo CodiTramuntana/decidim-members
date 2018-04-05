@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Decidim
-  module Admin
+  module System
     # A command with all the business logic for updating the current
     # organization appearance.
     class UpdateOrganizationModule < Rectify::Command
