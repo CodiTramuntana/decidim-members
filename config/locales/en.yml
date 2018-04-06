@@ -23,8 +23,15 @@ en:
           other: "%{count} members found"
         search: Search
         show_all: Show all
+      system:
+        members:
+          index:
+            title: Members
     menu:
       members: Members
+    system:
+      menu:
+        members: Members
   pages:
     home:
       statistics:

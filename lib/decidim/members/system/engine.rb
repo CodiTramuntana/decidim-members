@@ -25,7 +25,7 @@ module Decidim
 
         initializer "decidim_members_system.menu" do
           Decidim.menu :system_menu do |menu|
-            menu.item I18n.t("menu.members", scope: "decidim.admin"),
+            menu.item I18n.t("menu.members", scope: "decidim.system"),
                       decidim_members_system.members_path,
                       position: 4,
                       active: :inclusive

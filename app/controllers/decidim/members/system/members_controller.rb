@@ -7,7 +7,7 @@ module Decidim
       class MembersController < Decidim::System::ApplicationController
 
         def index
-
+          @organizations = Decidim::Organization.all
         end
 
         # def edit
