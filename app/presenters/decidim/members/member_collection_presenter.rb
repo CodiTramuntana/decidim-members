@@ -12,7 +12,7 @@ module Decidim
       end
 
       def render_pagination
-        paginate collection, theme: "decidim"
+        paginate collection, theme: 'decidim'
       end
 
       def render_current_page
@@ -26,17 +26,15 @@ module Decidim
       end
 
       def decorated_members
-        collection.map{ |m|
+        collection.map  do |m|
           ::Decidim::UserPresenter.new(m.becomes(Decidim::User))
-        }
+        end
       end
 
       def unsorted_org_members
         @org_members ||= begin
           scope = OrganizationMembers.new(organization).query
-          if query.present?
-            scope = FilteredMembers.for(query, scope)
-          end
+          scope = FilteredMembers.for(query, scope) if query.present?
           scope
         end
       end
@@ -52,9 +50,8 @@ module Decidim
       end
 
       def session_ordering
-        session[:members_ordering] ||= [[:id, :name, :email], [:asc, :desc]].map(&:sample)
+        session[:members_ordering] ||= [%i[id name email], %i[asc desc]].map(&:sample)
       end
-
     end
   end
 end

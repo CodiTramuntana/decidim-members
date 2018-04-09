@@ -5,32 +5,37 @@ module Decidim
     module System
       # Controller that allows managing the appearance of the organization.
       class MembersController < Decidim::System::ApplicationController
+        helper_method :organization
 
         def index
           @organizations = Decidim::Organization.all
         end
 
-        # def edit
-        #   authorize! :update, current_organization
-        #   @form = form(OrganizationAppearanceForm).from_model(current_organization)
-        # end
-        #
-        # def update
-        #   authorize! :update, current_organization
-        #   @form = form(OrganizationAppearanceForm).from_params(params)
-        #
-        #   UpdateOrganizationAppearance.call(current_organization, @form) do
-        #     on(:ok) do
-        #       flash[:notice] = I18n.t("organization.update.success", scope: "decidim.system")
-        #       redirect_to edit_organization_appearance_path
-        #     end
-        #
-        #     on(:invalid) do
-        #       flash.now[:alert] = I18n.t("organization.update.error", scope: "decidim.system")
-        #       render :edit
-        #     end
-        #   end
-        # end
+        def edit
+          @form = form(OrganizationModuleForm).from_model(organization)
+        end
+
+        def update
+          @form = form(OrganizationModuleForm).from_params(params)
+
+          UpdateOrganizationModule.call(organization.id, @form) do
+            on(:ok) do
+              flash[:notice] = I18n.t('members.update.success', scope: 'decidim.members.system')
+              redirect_to organization_members_path
+            end
+
+            on(:invalid) do
+              flash.now[:alert] = I18n.t('members.update.error', scope: 'decidim.members.system')
+              render :edit
+            end
+          end
+        end
+
+        private
+
+        def organization
+          @organization ||= Decidim::Organization.find(params[:id])
+        end
       end
     end
   end

@@ -1,9 +1,10 @@
 # frozen_string_literal: true
-require "decidim/members/admin"
-require "decidim/members/engine"
-require "decidim/members/system/engine"
-require "decidim/members/admin_engine"
-require "decidim/members/participatory_space"
+
+require 'decidim/members/admin'
+require 'decidim/members/engine'
+require 'decidim/members/system/engine'
+require 'decidim/members/admin_engine'
+require 'decidim/members/participatory_space'
 
 module Decidim
   module Members

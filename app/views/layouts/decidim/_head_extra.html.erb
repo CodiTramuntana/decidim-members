@@ -1,0 +1,12 @@
+<% if current_organization.enable_placeholder_members? %>
+  <%= javascript_tag do %>
+    $(document).ready(function(){
+      $('.register-form').find("#user_name").each(function(ev){
+        if(!$(this).val()) {
+          $(this).attr("placeholder", "<%= t('decidim.members.user_form.name').html_safe %>");
+        }
+        $(this).siblings(".help-text").html("<%= t('decidim.members.user_form.username_help').html_safe %>");
+      });
+    });
+  <% end %>
+<% end %>
