@@ -2,6 +2,7 @@
 
 module Decidim
   module Members
-    VERSION = '0.1.4'
+    module ApplicationHelper
+    end
   end
 end

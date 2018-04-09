@@ -1,14 +1,42 @@
 ---
 es:
-  activemodel:
-    attributes:
-      user:
-        name: Tu nombre y Organización
   decidim:
-    devise:
-      omniauth_registrations:
-        new:
-          username_help: Nombre público y Organización que aparece en sus publicaciones.
-      registrations:
-        new:
-          username_help: Nombre público y Organización que aparece en sus publicaciones.
+    members:
+      user_form:
+        name: Tu nombre y Organización
+        username_help: Nombre público y Organización que aparece en sus publicaciones.
+      index:
+        title: Miembros
+        members:
+          one: Un miembro
+          other: "%{count} miembros"
+        members_found:
+          one: Un miembro encontrado
+          other: "%{count} miembros encontrados"
+        search: Buscar
+        show_all: Mostrar todos
+      system:
+        members:
+          edit:
+            update: Actualizar
+          form:
+            module_members_organization: Módulo miembros organización
+          index:
+            title: Miembros
+          update:
+            error: Ha habido un error al actualizar este módulo.
+            success: Módulo miembros de la organización acutalizado correctamente.
+    menu:
+      members: Miembros
+    system:
+      menu:
+        members: Miembros
+      models:
+        organization:
+          fields:
+            enable_module_members: Habilitar módulo miembros
+            enable_placeholder_members: Habilitat placeholder módulo miembros
+  pages:
+    home:
+      statistics:
+        members_count: Miembros

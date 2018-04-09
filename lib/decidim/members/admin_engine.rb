@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-require "rails"
-require "active_support/all"
-
-require "decidim/core"
+require 'rails'
+require 'decidim/core'
 
 module Decidim
   module Members
@@ -11,11 +9,6 @@ module Decidim
     # There is nothing to administer, it's 'only provided since Decidim
     # requires it.
     class AdminEngine < ::Rails::Engine
-      isolate_namespace Decidim::Members
-
-      routes do
-      end
-
     end
   end
 end

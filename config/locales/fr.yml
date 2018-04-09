@@ -1,14 +1,42 @@
 ---
 fr:
-  activemodel:
-    attributes:
-      user:
-        name: Votre nom et Organisation
   decidim:
-    devise:
-      omniauth_registrations:
-        new:
-          username_help: Nom public et Organisation qui apparaît sur vos publications.
-      registrations:
-        new:
-          username_help: Nom public et Organisation qui apparaît sur vos publications.
+    members:
+      user_form:
+        name: Votre nom et Organisation
+        username_help: Nom public et Organisation qui apparaît sur vos publications.
+      index:
+        title: Membres
+        members:
+          one: Un membre
+          other: "%{count} membres"
+        members_found:
+          one: Un membre trouvé
+          other: "%{count} membres trouvés"
+        search: Rechercher
+        show_all: Montre tout
+      system:
+        members:
+          edit:
+            update: Mettre à jour
+          form:
+            module_members_organization: Module Membres Organisation
+          index:
+            title: Membres
+          update:
+            error: Une erreur s'est produite lors de la mise à jour de ce module d'organisation.
+            success: Membres du module d'organisation mis à jour avec succès.
+    menu:
+      members: Membres
+    system:
+      menu:
+        members: Membres
+      models:
+        organization:
+          fields:
+            enable_module_members: Activer les membres du module
+            enable_placeholder_members: Activer les membres réservés
+  pages:
+    home:
+      statistics:
+        members_count: Membres
