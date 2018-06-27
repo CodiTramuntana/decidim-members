@@ -28,6 +28,10 @@ es:
             success: Módulo miembros de la organización acutalizado correctamente.
     menu:
       members: Miembros
+    pages:
+      home:
+        statistics:
+          members_count: Miembros
     system:
       menu:
         members: Miembros
@@ -36,7 +40,3 @@ es:
           fields:
             enable_module_members: Habilitar módulo miembros
             enable_placeholder_members: Habilitat placeholder módulo miembros
-  pages:
-    home:
-      statistics:
-        members_count: Miembros

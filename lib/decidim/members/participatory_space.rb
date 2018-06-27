@@ -7,6 +7,8 @@ Decidim.register_participatory_space(:members) do |participatory_space|
     Decidim::Members::OrganizationMembers.new(organization).query
   end
 
+  participatory_space.permissions_class_name = 'Decidim::Members::Permissions'
+
   participatory_space.context(:public) do |ctx|
     ctx.engine = Decidim::Members::Engine
   end

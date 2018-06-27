@@ -28,6 +28,10 @@ en:
             success: Organization module members updated successfully.
     menu:
       members: Members
+    pages:
+      home:
+        statistics:
+          members_count: Members
     system:
       menu:
         members: Members
@@ -36,7 +40,3 @@ en:
           fields:
             enable_module_members: Enable module members
             enable_placeholder_members: Enable placeholder members
-  pages:
-    home:
-      statistics:
-        members_count: Members

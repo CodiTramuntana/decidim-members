@@ -18,11 +18,11 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib,vendor}/**/*', 'Rakefile', 'README.md']
 
-  s.add_dependency 'decidim-core', '~> 0.11.1'
+  s.add_dependency 'decidim-core', '~> 0.12.0'
   s.add_dependency 'pg_search'
-  s.add_dependency 'rails', '~> 5.1.4'
+  s.add_dependency 'rails', '~> 5.2'
   s.add_dependency 'sanitize', '~> 4.5'
 
-  s.add_development_dependency 'decidim-admin', '~> 0.11.1'
-  s.add_development_dependency 'decidim-dev', '~> 0.11.1'
+  s.add_development_dependency 'decidim-admin', '~> 0.12.0'
+  s.add_development_dependency 'decidim-dev', '~> 0.12.0'
 end
