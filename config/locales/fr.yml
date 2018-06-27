@@ -28,6 +28,10 @@ fr:
             success: Membres du module d'organisation mis à jour avec succès.
     menu:
       members: Membres
+    pages:
+      home:
+        statistics:
+          members_count: Membres
     system:
       menu:
         members: Membres
@@ -36,7 +40,3 @@ fr:
           fields:
             enable_module_members: Activer les membres du module
             enable_placeholder_members: Activer les membres réservés
-  pages:
-    home:
-      statistics:
-        members_count: Membres

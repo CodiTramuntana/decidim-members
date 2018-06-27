@@ -3,8 +3,8 @@
 module Decidim
   module Members
     module System
-      # A form object used to update the current organization appearance from the admin
-      # dashboard.
+      # A form object used to update the current organization appearance
+      # from the admin dashboard.
       #
       class OrganizationModuleForm < Form
         mimic :organization

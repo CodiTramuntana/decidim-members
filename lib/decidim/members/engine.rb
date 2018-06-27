@@ -19,16 +19,12 @@ module Decidim
 
       initializer 'decidim.stats' do
         Decidim.stats.register :members_count, priority: StatsRegistry::HIGH_PRIORITY do |organization, _start_at, _end_at|
-          user_ids = Decidim::Verifications::Authorizations.new(organization: organization, granted: true).pluck(:decidim_user_id).uniq
-          Decidim::Members::User.where(id: user_ids).public_spaces.count
-        end
-      end
-
-      initializer 'decidim_members.inject_abilities_to_user' do |_app|
-        Decidim.configure do |config|
-          config.abilities += [
-            'Decidim::Members::Abilities::UserAbility'
-          ]
+          if organization.enable_module_members?
+            user_ids = Decidim::Verifications::Authorizations.new(organization: organization, granted: true).pluck(:decidim_user_id).uniq
+            Decidim::Members::User.where(id: user_ids).public_spaces.count
+          else
+            0
+          end
         end
       end
 

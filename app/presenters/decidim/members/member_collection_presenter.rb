@@ -42,7 +42,6 @@ module Decidim
       def org_members
         if query.present?
           session[:members_ordering] = nil
-          users = Decidim::User.table_name
           unsorted_org_members.order(name: :asc)
         else
           unsorted_org_members.reorder Hash[[session_ordering]]
