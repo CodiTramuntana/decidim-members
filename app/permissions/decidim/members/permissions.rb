@@ -11,6 +11,7 @@ module Decidim
           allow!
           return permission_action
         end
+
         return permission_action unless user
       end
     end
