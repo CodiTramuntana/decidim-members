@@ -9,7 +9,7 @@ module Decidim
 
       def query
         user_ids = Decidim::Verifications::Authorizations.new(organization: @organization, granted: true).pluck(:decidim_user_id).uniq
-        Decidim::Members::User.where(id: user_ids).not_deleted.no_active_invitation.order(name: :asc)
+        Decidim::User.where(id: user_ids).not_deleted.no_active_invitation.order(name: :asc)
       end
     end
   end
