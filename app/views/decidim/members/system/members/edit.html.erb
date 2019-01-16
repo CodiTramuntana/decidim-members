@@ -1,0 +1,7 @@
+<%#raise%>
+<%= decidim_form_for(@form, html: { class: "form edit_organization_module" }, url: organization_member_path(@organization), method: :put) do |f| %>
+  <%= render partial: "form", object: f %>
+  <div class="button--double form-general-submit">
+    <%= f.submit t(".update") %>
+  </div>
+<% end %>

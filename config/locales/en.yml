@@ -1,0 +1,42 @@
+---
+en:
+  decidim:
+    members:
+      user_form:
+        name: Your name & Organization
+        username_help: Public name and Organization that appears on your posts.
+      index:
+        title: Members
+        members:
+          one: One member
+          other: "%{count} members"
+        members_found:
+          one: One member found
+          other: "%{count} members found"
+        search: Search
+        show_all: Show all
+      system:
+        members:
+          edit:
+            update: Update
+          form:
+            module_members_organization: Module Members Organization
+          index:
+            title: Members
+          update:
+            error: There was an error when updating this organization module.
+            success: Organization module members updated successfully.
+    menu:
+      members: Members
+    pages:
+      home:
+        statistics:
+          members_count: Members
+    system:
+      menu:
+        members: Members
+      models:
+        organization:
+          fields:
+            enable_module_members: Enable module members
+            enable_placeholder_members: Enable placeholder members

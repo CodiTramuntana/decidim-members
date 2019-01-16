@@ -1,0 +1,31 @@
+<% provide :meta_title, t("members.index.title", scope: "decidim") %>
+
+<main class="wrapper">
+  <section id="members-grid" class="section row collapse">
+    <div class="row collapse order-by">
+      <% if @members.query.present? %>
+        <h2 class="order-by__text section-heading"><%= t "members.index.members_found", scope: "decidim", count: @members.count %></h2>
+          <span style="margin-left: 1em;">(<%= link_to t("members.index.show_all", scope: "decidim"), decidim_members.members_path %>)</span>
+      <% else %>
+        <h2 class="order-by__text section-heading"><%= t "members.index.members", scope: "decidim", count: @members.count %></h2>
+      <% end %>
+    </div>
+
+    <div class="row" style="margin-bottom: 3em;">
+      <%= form_tag({}, id: 'member-search', method: :get) do %>
+        <div class="input-group" style='width: 50%; margin: auto;'>
+          <%= text_field_tag :q, @members.query, placeholder: t('members.index.search', scope: 'decidim'), class: 'input-group-field' %>
+          <div class="input-group-button">
+            <button type="submit" class="button button--muted">
+              <%= icon "magnifying-glass", aria_label: t('members.index.search', scope: 'decidim') %>
+            </button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="row small-up-1 medium-up-4 large-up-4 card-grid">
+      <%= @members.render_current_page %>
+    </div>
+  </section>
+  <%= @members.render_pagination %>
+</main>
