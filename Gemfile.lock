@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    decidim-members (0.1.10)
+    decidim-members (0.1.12)
       decidim-core (>= 0.15.0)
       pg_search
       rails (~> 5.2)
@@ -681,4 +681,4 @@ DEPENDENCIES
   decidim-members!
 
 BUNDLED WITH
-   1.16.1
+   1.17.1

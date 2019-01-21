@@ -13,7 +13,7 @@ module Decidim
       end
 
       def query
-        @scope.search_by_name_like(@query_string)
+        @scope.where("name LIKE ?", "%#{@query_string}%")
       end
     end
   end
