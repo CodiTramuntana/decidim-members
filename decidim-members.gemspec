@@ -13,13 +13,13 @@ Gem::Specification.new do |s|
   s.email       = ['isaac.mg@coditramuntana.com']
   s.homepage    = 'https://www.coditramuntana.com/'
   s.summary = 'Member list and search plugin for decidim'
-  s.description = s.summary
-  s.license     = 'AGPL 3.0'
+  s.description = 'This gem is a member list and search plugin for decidim, you can active the gem via system dashboard'
+  s.license     = 'AGPL-3.0'
 
   s.files = Dir['{app,config,db,lib,vendor}/**/*', 'Rakefile', 'README.md']
 
-  s.add_dependency 'decidim-core', '>= 0.15.0'
-  s.add_dependency 'pg_search'
+  s.add_dependency 'decidim-core', '~> 0.15', '>= 0.15.0'
+  s.add_dependency 'pg_search', '~> 2.1.4'
   s.add_dependency 'rails', '~> 5.2'
   s.add_dependency 'sanitize', '~> 4.5'
 
