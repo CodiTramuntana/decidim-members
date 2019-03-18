@@ -20,7 +20,11 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'decidim-core', '~> 0.15', '>= 0.15.0'
   s.add_dependency 'pg_search', '~> 2.1.4'
-  s.add_dependency 'rails', '~> 5.2'
+  # Force gem rails to 5.2.2.1 to fix some vulnerabilities
+  # on actionview and railties
+  # It can be removed when new stable version will be released or
+  # when Decidim force the rails version
+  s.add_dependency 'rails', '~> 5.2.2.1'
   s.add_dependency 'sanitize', '~> 4.5'
 
   s.add_development_dependency 'decidim-admin', '~> 0.15.0'
