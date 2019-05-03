@@ -2,9 +2,8 @@ PATH
   remote: .
   specs:
     decidim-members (0.1.15)
-      decidim-core (~> 0.16.1)
+      decidim-core (>= 0.16.1)
       pg_search (~> 2.1.4)
-      sanitize (~> 4.5)
 
 GEM
   remote: https://rubygems.org/
@@ -461,8 +460,6 @@ GEM
     nobspw (0.4.0)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
-    nokogumbo (1.5.0)
-      nokogiri
     oauth (0.5.4)
     oauth2 (1.4.1)
       faraday (>= 0.8, < 0.16.0)
@@ -616,10 +613,6 @@ GEM
     ruby-progressbar (1.10.0)
     rubyzip (1.2.2)
     safe_yaml (1.0.5)
-    sanitize (4.6.6)
-      crass (~> 1.0.2)
-      nokogiri (>= 1.4.4)
-      nokogumbo (~> 1.4)
     sass (3.4.25)
     sassc (1.12.1)
       ffi (~> 1.9.6)
@@ -703,8 +696,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  decidim-admin (~> 0.16.1)
-  decidim-dev (~> 0.16.1)
+  decidim-admin (>= 0.16.1)
+  decidim-dev (>= 0.16.1)
   decidim-members!
 
 BUNDLED WITH
