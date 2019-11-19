@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
 
   DECIDIM_VERSION = '>= 0.17.1'
   s.add_dependency 'decidim-core', DECIDIM_VERSION
-  s.add_dependency 'pg_search', '~> 2.1.4'
+  s.add_dependency 'pg_search', '>= 2.1.4'
   
   s.add_development_dependency 'decidim-admin', DECIDIM_VERSION
   s.add_development_dependency 'decidim-dev', DECIDIM_VERSION
