@@ -1,5 +1,10 @@
 = Changelog
 
+== 0.1.18 PATCH (19/01/2022)
+- Security fixes:
+- nokogiri: GHSA-2rr5-8q37-2w7h
+- puma: GHSA-48w2-rm65-62xx
+
 == 0.1.17 PATCH (09/08/2021)
 - Update bundler
 
