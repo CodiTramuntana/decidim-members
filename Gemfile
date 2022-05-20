@@ -14,3 +14,13 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+
+gem 'actionpack', '>= 6.0.4.8'
+gem 'actionview', '>= 6.0.4.8'
+gem 'activestorage', '>= 6.0.4.7'
+gem 'doc2text' ,'>= 0.4.5'
+gem 'image_processing', '>= 1.12.2'
+gem 'nokogiri', '>= 1.13.4'
+gem 'puma','>= 5.6.4'
+gem 'rails', '>= 6.0.4.8'
+gem 'railties','>= 6.0.4.8'
