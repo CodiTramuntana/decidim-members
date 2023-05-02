@@ -2,7 +2,7 @@
 
 module Decidim
   module Members
-    class MemberCollectionPresenter < Rectify::Presenter
+    class MemberCollectionPresenter < Decidim::Form
       attribute :organization, Decidim::Organization
       attribute :page, Integer
       attribute :query, String
