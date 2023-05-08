@@ -3,7 +3,7 @@
 module Decidim
   module Members
     module System
-      class UpdateOrganizationModule < Rectify::Command
+      class UpdateOrganizationModule < Decidim::Command
         def initialize(id, form)
           @organization_id = id
           @form = form

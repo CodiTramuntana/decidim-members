@@ -1,5 +1,10 @@
 = Changelog
 
+== 0.2.0 MINOR (02/05/2023)
+- Make module compatible with Decidim 0.27
+- Change uses of Rectify gem for Decidim's replacements
+- Use Ruby 3.1.3, be compatible with Ruby 3.0.2
+
 == 0.1.19 PATCH (01/03/2022)
 - Fix compatibility with Decidim 0.25.2
 

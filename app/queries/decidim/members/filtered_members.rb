@@ -2,7 +2,7 @@
 
 module Decidim
   module Members
-    class FilteredMembers < Rectify::Query
+    class FilteredMembers < Decidim::Query
       def self.for(query_string, scope)
         new(query_string, scope).query
       end

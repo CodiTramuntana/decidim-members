@@ -2,7 +2,7 @@
 
 module Decidim
   module Members
-    class OrganizationMembers < Rectify::Query
+    class OrganizationMembers < Decidim::Query
       def initialize(organization)
         @organization = organization
       end
